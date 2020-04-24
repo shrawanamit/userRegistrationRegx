@@ -50,7 +50,7 @@ function validateMobileNo(){
 
 	echo "enter your Mobile no with country code"
     read mobileNo
-	pattern="^[1-9]{1,4}([ ][1-9]{10})$"
+	pattern="^(+[1-9]{1,3}[ ])[1-9]{10}$"
 
 	if [[ $mobileNo =~ $pattern ]]
 	then
@@ -60,3 +60,24 @@ function validateMobileNo(){
 	fi
 }
 validateMobileNo
+function validatePasswoed(){
+	
+	read -p "please enter password:" password
+	count=`echo ${#password}`
+	
+	if [[ $count -ne 8 ]]
+	then
+		echo "Password length should be 8 charactore"
+	exit 1;
+	fi
+	
+	pattern="^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&*])$"
+
+	if [[ $password =~ $pattern ]]
+	then
+		echo "Password is valid"
+	else
+		echo "Password Must contain upparcase ,lowecase,number and special charactor"
+	fi
+}
+validatePasswoed
