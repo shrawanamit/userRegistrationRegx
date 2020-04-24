@@ -15,3 +15,18 @@ function validateFirstName(){
 	fi 
 }
 validateFirstName
+
+function validateLastName(){
+
+	echo "enter your last name"
+	read lastName
+	pattern=[A-Z][a-z]{3,}
+
+	if [[ $lastName =~ $pattern ]]
+	then
+		echo "valid last  name"
+	else
+		echo "invalid last  name"
+	fi
+}
+validateLastName
