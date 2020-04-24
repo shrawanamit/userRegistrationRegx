@@ -46,3 +46,17 @@ function validateEmail(){
 	fi
 }
 validateEmail
+function validateMobileNo(){
+
+	echo "enter your Mobile no with country code"
+    read mobileNo
+	pattern="^[1-9]{1,4}([ ][1-9]{10})$"
+
+	if [[ $mobileNo =~ $pattern ]]
+	then
+	echo "valid mobile no"
+	else
+	echo "invalid mobile no"
+	fi
+}
+validateMobileNo
