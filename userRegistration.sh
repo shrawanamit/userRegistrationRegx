@@ -36,7 +36,7 @@ function validateEmail(){
 	 echo "enter your email"
 	 read email
 	
-	pattern="^[a-zA-Z0-9]+([._-+][a-zA-Z0-9]+)*@[a-zA-Z]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})$"
+	pattern="^[a-zA-Z0-9]*+([._-+])?[a-zA-Z0-9]*@[a-zA-Z]+.[a-zA-Z]{2,4}(.[a-zA-Z]{2})*$"
 
 	if [[ $email =~ $pattern ]]
 	then
@@ -50,7 +50,7 @@ function validateMobileNo(){
 
 	echo "enter your Mobile no with country code"
     read mobileNo
-	pattern="^(+[1-9]{1,3}[ ])[1-9]{10}$"
+	pattern="^[1-9]{2}[[:space:]]{1}[0-9]{10}$"
 
 	if [[ $mobileNo =~ $pattern ]]
 	then
@@ -71,7 +71,7 @@ function validatePasswoed(){
 	exit 1;
 	fi
 	
-	pattern="^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&*])$"
+	pattern="^[A-Za-z0-9]*[@#$%^&*][0-9a-zA-Z]*$"
 
 	if [[ $password =~ $pattern ]]
 	then
